@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Order ahead from Campus Café and collect at the counter.">
+  <title>Campus Café | Order</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/order.js" defer></script>
+</head>
+
+<body id="top">
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="images/logo.svg" alt="" width="40" height="40">
+      <span>Campus Café</span>
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li>
+          <a href="order.html" class="active" aria-current="page">Order</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Place an order</h1>
+    <p>Order ahead and collect from the counter. Fields marked * are required.</p>
+
+    <form id="order-form" action="#" method="post">
+
+      <fieldset>
+        <legend>Your details</legend>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Full name *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              minlength="3"
+              maxlength="50"
+              placeholder="e.g. Ayesha Khan"
+              autocomplete="name"
+            >
+          </div>
+
+          <div class="field">
+            <label for="phone">Mobile number *</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              pattern="03[0-9]{9}"
+              title="11 digits starting with 03, for example 03001234567"
+              placeholder="03001234567"
+              autocomplete="tel"
+            >
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your order</legend>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="item">Item *</label>
+            <select id="item" name="item" required>
+              <option value="">Choose an item...</option>
+              <option>Espresso</option>
+              <option>Cappuccino</option>
+              <option>Cafe Latte</option>
+              <option>Karak Chai</option>
+              <option>Iced Mocha</option>
+              <option>Cold Brew</option>
+              <option>Mango Smoothie</option>
+              <option>Chicken Sandwich</option>
+              <option>Chocolate Brownie</option>
+              <option>Cinnamon Roll</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="qty">Quantity *</label>
+            <input
+              type="number"
+              id="qty"
+              name="qty"
+              required
+              min="1"
+              max="10"
+              value="1"
+            >
+          </div>
+
+          <div class="field">
+            <label for="pickup">Pickup time *</label>
+            <input
+              type="time"
+              id="pickup"
+              name="pickup"
+              required
+              min="08:00"
+              max="18:00"
+            >
+          </div>
+        </div>
+
+        <div class="form-row">
+          <fieldset class="choice">
+            <legend>Size</legend>
+            <label>
+              <input type="radio" name="size" value="Small">
+              Small
+            </label>
+            <label>
+              <input type="radio" name="size" value="Medium" checked>
+              Medium
+            </label>
+            <label>
+              <input type="radio" name="size" value="Large">
+              Large
+            </label>
+          </fieldset>
+
+          <fieldset class="choice">
+            <legend>Extras</legend>
+            <label>
+              <input type="checkbox" name="extras" value="Extra shot">
+              Extra shot
+            </label>
+            <label>
+              <input type="checkbox" name="extras" value="Oat milk">
+              Oat milk
+            </label>
+            <label>
+              <input type="checkbox" name="extras" value="Whipped cream">
+              Whipped cream
+            </label>
+          </fieldset>
+        </div>
+
+        <div class="field">
+          <label for="notes">Notes for the barista</label>
+          <textarea
+            id="notes"
+            name="notes"
+            rows="3"
+            maxlength="200"
+            placeholder="e.g. less sugar, please"
+          ></textarea>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn">Place order</button>
+
+      <p id="message" role="status" aria-live="polite"></p>
+    </form>
+
+    <section class="saved-orders">
+      <h2>Saved orders</h2>
+      <p>These are stored in this browser only.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Orders placed from this browser</caption>
+
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Order</th>
+              <th scope="col">Qty</th>
+              <th scope="col">Pickup</th>
+              <th scope="col">Extras</th>
+            </tr>
+          </thead>
+
+          <tbody id="orders-body"></tbody>
+        </table>
+      </div>
+
+      <button
+        type="button"
+        id="clear-orders"
+        class="btn btn-secondary"
+      >
+        Clear all orders
+      </button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Campus Café &middot; Built for CIT331</p>
+    <p>
+      Learn more:
+      <a
+        href="https://developer.mozilla.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >MDN Web Docs</a>
+    </p>
+  </footer>
+
+  <a class="back-to-top" href="#top" aria-label="Back to top">&uarr;</a>
+
+</body>
+</html>

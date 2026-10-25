@@ -1,0 +1,536 @@
+/* =====================================
+   Campus Cafe - Main Stylesheet
+   File: css/styles.css
+   ===================================== */
+
+/* 1. Global styles */
+
+:root {
+  --coffee: #6f422b;
+  --coffee-dark: #452719;
+  --cream: #fff8ed;
+  --light-brown: #ead8c5;
+  --text: #30251f;
+  --white: #ffffff;
+  --muted: #766a62;
+  --border: #dfd0c2;
+  --success: #246b45;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--cream);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--coffee);
+}
+
+a:hover {
+  color: var(--coffee-dark);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  color: var(--coffee-dark);
+}
+
+h1 {
+  margin-top: 1.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+  margin-top: 1.5rem;
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+/* 2. Skip link for accessibility */
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  background: var(--white);
+  color: var(--coffee-dark);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* 3. Header and navigation */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 5%;
+  background-color: var(--white);
+  border-bottom: 2px solid var(--light-brown);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--coffee-dark);
+  font-size: 1.35rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  object-fit: contain;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list a {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+  background-color: var(--coffee);
+  color: var(--white);
+}
+
+/* 4. Main page layout */
+
+main {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  padding: 1.5rem 0 3rem;
+}
+
+main > h1 {
+  margin-bottom: 0.5rem;
+}
+
+main > h1 + p {
+  color: var(--muted);
+}
+
+/* 5. Home page hero section */
+
+.hero {
+  padding: clamp(2rem, 7vw, 5rem) 2rem;
+  margin: 1rem 0 3rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f2dfc9, #fff8ed);
+  border-radius: 16px;
+}
+
+.hero h1 {
+  max-width: 750px;
+  margin: 0 auto 1rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* 6. Buttons */
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  border: 2px solid var(--coffee);
+  border-radius: 7px;
+  background-color: var(--coffee);
+  color: var(--white);
+  font: inherit;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--coffee-dark);
+  border-color: var(--coffee-dark);
+  color: var(--white);
+}
+
+.btn:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #bf7b37;
+  outline-offset: 3px;
+}
+
+.btn-secondary {
+  margin-top: 1rem;
+  background-color: var(--white);
+  color: var(--coffee-dark);
+}
+
+.btn-secondary:hover {
+  background-color: var(--light-brown);
+  color: var(--coffee-dark);
+}
+
+/* 7. Home page cards */
+
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.card {
+  padding: 1.4rem;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(69, 39, 25, 0.06);
+}
+
+.card h3,
+.card h2 {
+  margin-top: 0;
+}
+
+.notice {
+  margin-top: 2rem;
+}
+
+.logo-figure {
+  margin: 2.5rem auto;
+  text-align: center;
+}
+
+.logo-figure img {
+  width: 120px;
+  height: 120px;
+}
+
+.logo-figure figcaption {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* 8. Menu page */
+
+.menu-group {
+  margin: 2.5rem 0;
+}
+
+.menu-group h2 {
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--light-brown);
+}
+
+.menu-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.menu-item {
+  position: relative;
+  padding: 1.25rem;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.menu-item h3 {
+  margin: 0;
+}
+
+.menu-item p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.item-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.price {
+  color: var(--coffee);
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background-color: var(--light-brown);
+  color: var(--coffee-dark);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* 9. Tables */
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--white);
+}
+
+caption {
+  padding: 0.75rem;
+  color: var(--muted);
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+thead th {
+  background-color: var(--coffee);
+  color: var(--white);
+}
+
+tbody tr:nth-child(even) {
+  background-color: #faf0e5;
+}
+
+.specials {
+  margin-top: 3rem;
+}
+
+/* 10. Order form */
+
+#order-form {
+  margin-top: 2rem;
+}
+
+#order-form > fieldset {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--white);
+}
+
+#order-form legend {
+  padding: 0 0.5rem;
+  color: var(--coffee-dark);
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.field label {
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #b9a797;
+  border-radius: 6px;
+  background-color: var(--white);
+  color: var(--text);
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.choice {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0.75rem 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.choice legend {
+  font-size: 1rem !important;
+}
+
+.choice label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.choice input {
+  width: auto;
+  margin: 0;
+}
+
+#message {
+  margin-top: 1rem;
+  color: var(--success);
+  font-weight: bold;
+}
+
+/* 11. Saved orders */
+
+.saved-orders {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.saved-orders > p {
+  color: var(--muted);
+}
+
+/* 12. Footer */
+
+.site-footer {
+  padding: 1.5rem 5%;
+  background-color: var(--coffee-dark);
+  color: var(--white);
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0.4rem 0;
+}
+
+.site-footer a {
+  color: #ffe0b8;
+}
+
+.site-footer a:hover {
+  color: var(--white);
+}
+
+/* 13. Back-to-top link */
+
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 50%;
+  background-color: var(--coffee);
+  color: var(--white);
+  font-size: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top:hover {
+  background-color: var(--coffee-dark);
+  color: var(--white);
+}
+
+/* 14. Responsive design for tablets and phones */
+
+@media (max-width: 700px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-row {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-list {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .hero {
+    padding: 2.5rem 1.25rem;
+  }
+
+  main {
+    width: 92%;
+  }
+
+  th,
+  td {
+    padding: 0.65rem;
+  }
+}
